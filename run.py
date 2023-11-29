@@ -16,8 +16,8 @@ def parse_args():
     parser.add_argument("--mode", type=str, default="auto",
                         help="mode, only support auto and manual, if you choose manual, you need to press enter to continue in each step")
     parser.add_argument("--quiet", action="store_true",default=False)
-    
-    
+
+
     parser.add_argument("--max_subtask_chain_length", type=int, default=CONFIG.max_subtask_chain_length)
     parser.add_argument("--enable_ask_human_for_help", action="store_true",default=CONFIG.enable_ask_human_for_help)
     parser.add_argument("--max_plan_refine_chain_length", type=int, default=CONFIG.max_plan_refine_chain_length)
@@ -26,8 +26,7 @@ def parse_args():
     parser.add_argument("--max_retry_times", type=int, default=CONFIG.max_retry_times)
     parser.add_argument("--config_file",type=str,default="assets/config.yml")
 
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 if __name__ == '__main__':
     args = parse_args()
